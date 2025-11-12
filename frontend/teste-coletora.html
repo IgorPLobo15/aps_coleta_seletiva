@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Coletora</title>
+</head>
+
+<body>
+    <h1>Teste de APIs da Coletora</h1>
+    <button onclick="testarColetoras()">Testar GET /coletoras/goias</button>
+    <button onclick="testarPendentes()">Testar GET /solicitacoes/pendentes</button>
+    <button onclick="testarAceitas()">Testar GET /solicitacoes/aceitas</button>
+    <pre id="resultado"></pre>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000';
+
+        async function testarColetoras() {
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = 'Carregando coletoras...';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/coletoras/goias`);
+                const data = await response.json();
+                resultado.textContent = 'Coletoras:\n' + JSON.stringify(data, null, 2);
+            } catch (erro) {
+                resultado.textContent = 'ERRO: ' + erro.message;
+            }
+        }
+
+        async function testarPendentes() {
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = 'Carregando pendentes...';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/solicitacoes/pendentes`);
+                const data = await response.json();
+                resultado.textContent = 'Pendentes:\n' + JSON.stringify(data, null, 2);
+            } catch (erro) {
+                resultado.textContent = 'ERRO: ' + erro.message;
+            }
+        }
+
+        async function testarAceitas() {
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = 'Carregando aceitas...';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/solicitacoes/aceitas`);
+                const data = await response.json();
+                resultado.textContent = 'Aceitas:\n' + JSON.stringify(data, null, 2);
+            } catch (erro) {
+                resultado.textContent = 'ERRO: ' + erro.message;
+            }
+        }
+    </script>
+</body>
+
+</html>

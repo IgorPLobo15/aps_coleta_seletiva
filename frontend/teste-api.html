@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste API</title>
+</head>
+
+<body>
+    <h1>Teste de Conexão com API</h1>
+    <button onclick="testarColetoras()">Testar /coletoras/goias</button>
+    <button onclick="testarPendentes()">Testar /solicitacoes/pendentes</button>
+    <pre id="resultado"></pre>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000';
+
+        async function testarColetoras() {
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = 'Carregando...';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/coletoras/goias`);
+                const data = await response.json();
+                resultado.textContent = JSON.stringify(data, null, 2);
+            } catch (erro) {
+                resultado.textContent = 'ERRO: ' + erro.message;
+            }
+        }
+
+        async function testarPendentes() {
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = 'Carregando...';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/solicitacoes/pendentes`);
+                const data = await response.json();
+                resultado.textContent = JSON.stringify(data, null, 2);
+            } catch (erro) {
+                resultado.textContent = 'ERRO: ' + erro.message;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+/**
+ * Estilos customizados adicionais para o Sistema de Coleta Seletiva Industrial
+ * Complementa o TailwindCSS com estilos específicos do projeto
+ */
+
+/* Estilos gerais */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Animações suaves */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para tabelas */
+table {
+    border-collapse: collapse;
+}
+
+/* Hover effects para linhas de tabela */
+tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Estilos para status badges */
+.status-pendente {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-aceita {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-concluida {
+    background-color: #d1fae5;
+    color: #065f46;
+}

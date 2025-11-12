@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Coleta Seletiva Industrial - Goiás</title>
+
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-green-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold">Sistema de Coleta Seletiva Industrial</h1>
+            <p class="text-green-100 mt-1">Gerenciamento de Resíduos Industriais - Estado de Goiás</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Introdução -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-3">Bem-vindo ao Sistema</h2>
+            <p class="text-gray-600 mb-4">
+                Este sistema facilita o gerenciamento de coleta de resíduos industriais em conformidade
+                com a ISO 14.000, conectando indústrias que precisam descartar resíduos com empresas
+                coletoras licenciadas no estado de Goiás.
+            </p>
+            <p class="text-gray-600">
+                Selecione abaixo o perfil de acesso correspondente à sua função:
+            </p>
+        </div>
+
+        <!-- Cards de Navegação -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card Cadastro -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Cadastro</h3>
+                    <p class="text-gray-600 mb-4">
+                        Cadastre novas indústrias e empresas coletoras no sistema.
+                    </p>
+                    <a href="cadastro.html"
+                        class="inline-block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                        Acessar Cadastro
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Indústria -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Indústria</h3>
+                    <p class="text-gray-600 mb-4">
+                        Solicite coletas de resíduos e visualize certificados de destinação final.
+                    </p>
+                    <a href="industria.html"
+                        class="inline-block w-full text-center bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200">
+                        Acessar Dashboard
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Coletora -->
+            <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Coletora</h3>
+                    <p class="text-gray-600 mb-4">
+                        Gerencie solicitações pendentes e finalize coletas de resíduos.
+                    </p>
+                    <a href="coletora.html"
+                        class="inline-block w-full text-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                        Acessar Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informações Adicionais -->
+        <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-blue-700">
+                        <strong>Importante:</strong> Este sistema atende exclusivamente empresas localizadas no estado
+                        de Goiás (GO),
+                        em conformidade com as normas ambientais estaduais e a ISO 14.000.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p class="text-gray-400">
+                Sistema de Coleta Seletiva Industrial - Goiás &copy; 2024
+            </p>
+            <p class="text-gray-500 text-sm mt-2">
+                Desenvolvido para conformidade com ISO 14.000
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
