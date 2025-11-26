@@ -1,0 +1,62 @@
+═══════════════════════════════════════════════════════════════
+  SISTEMA DE COLETA SELETIVA INDUSTRIAL - INÍCIO RÁPIDO
+═══════════════════════════════════════════════════════════════
+
+✅ Banco de dados já foi populado com dados de exemplo!
+
+📋 PARA RODAR O PROJETO:
+
+1️⃣  INICIAR O BACKEND:
+   
+   Abra um Terminal/PowerShell e execute:
+   
+   cd backend
+   npm run dev
+   
+   Aguarde a mensagem: "Servidor rodando na porta 3000"
+   ⚠️  MANTENHA ESTE TERMINAL ABERTO!
+
+2️⃣  ABRIR O FRONTEND:
+   
+   Opção A - Usar o script (duplo clique):
+   → Execute: abrir-frontend.bat
+   
+   Opção B - Manual:
+   → Navegue até a pasta "frontend"
+   → Abra o arquivo "index.html" no navegador
+
+═══════════════════════════════════════════════════════════════
+
+🌐 URLs:
+   Backend: http://localhost:3000
+   Frontend: index.html (aberto no navegador)
+
+📱 PÁGINAS DISPONÍVEIS:
+   - index.html → Página inicial
+   - cadastro.html → Cadastrar indústrias/coletoras
+   - industria.html → Dashboard da indústria
+   - coletora.html → Dashboard da coletora
+   - relatorios.html → Relatórios e estatísticas
+
+═══════════════════════════════════════════════════════════════
+
+🧪 TESTAR:
+   
+   No navegador, acesse: http://localhost:3000
+   Deve aparecer uma mensagem de sucesso da API
+
+📊 DADOS POPULADOS:
+   - 10 indústrias
+   - 5 coletoras  
+   - 50 solicitações
+   - 25 certificados
+
+═══════════════════════════════════════════════════════════════
+
+💡 DICAS:
+   - O backend precisa estar rodando para o frontend funcionar
+   - Use Ctrl+C no terminal para parar o backend
+   - Para repopular o banco: cd backend → npm run seed
+
+═══════════════════════════════════════════════════════════════
+

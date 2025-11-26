@@ -42,6 +42,7 @@ const industriasRoutes = require('./routes/industrias');
 const coletorasRoutes = require('./routes/coletoras');
 const solicitacoesRoutes = require('./routes/solicitacoes');
 const certificadosRoutes = require('./routes/certificados');
+const relatoriosRoutes = require('./routes/relatorios');
 
 // Rota de teste para verificar se o servidor está funcionando
 app.get('/', (req, res) => {
@@ -62,6 +63,9 @@ app.use('/solicitacoes', solicitacoesRoutes);
 
 // Registrar rotas de certificados
 app.use('/certificados', certificadosRoutes);
+
+// Registrar rotas de relatórios
+app.use('/relatorios', relatoriosRoutes);
 
 /**
  * Inicialização do Servidor

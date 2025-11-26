@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - Sistema de Coleta Seletiva</title>
+
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-green-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold">Relatórios Gerenciais e Ambientais</h1>
+                <p class="text-green-100 mt-1 text-sm md:text-base">
+                    Indicadores de desempenho da coleta seletiva industrial no estado de Goiás
+                </p>
+            </div>
+            <a href="index.html"
+                class="mt-4 md:mt-0 inline-flex items-center px-4 py-2 bg-white text-green-700 rounded-lg shadow hover:bg-green-50 text-sm font-medium">
+                Voltar para início
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-8">
+        <!-- Indicadores de Visão Geral -->
+        <section class="bg-white rounded-lg shadow-md p-6 fade-in">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">Visão Geral</h2>
+                <span class="text-xs text-gray-500">Baseado apenas em coletas concluídas</span>
+            </div>
+
+            <div id="cardsVisaoGeral"
+                class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center text-sm text-gray-700">
+                <!-- Populado via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Filtros de período -->
+        <section class="bg-white rounded-lg shadow-md p-6 fade-in">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-1">Resíduos por Tipo</h2>
+                    <p class="text-gray-600 text-sm">
+                        Relatório agregado por tipo de resíduo, considerando apenas coletas concluídas com certificado.
+                    </p>
+                </div>
+                <form id="formFiltros" class="flex flex-col sm:flex-row gap-3 items-start sm:items-end">
+                    <div>
+                        <label for="dataInicio" class="block text-xs font-medium text-gray-700 mb-1">
+                            Data inicial
+                        </label>
+                        <input type="date" id="dataInicio" name="dataInicio"
+                            class="border border-gray-300 rounded px-3 py-1 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div>
+                        <label for="dataFim" class="block text-xs font-medium text-gray-700 mb-1">
+                            Data final
+                        </label>
+                        <input type="date" id="dataFim" name="dataFim"
+                            class="border border-gray-300 rounded px-3 py-1 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div class="flex gap-2">
+                        <button type="submit"
+                            class="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-lg hover:bg-green-700">
+                            Aplicar filtros
+                        </button>
+                        <button type="button" id="btnLimparFiltros"
+                            class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200">
+                            Limpar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tabela de Resíduos -->
+            <div class="mt-6 overflow-x-auto">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+                        Distribuição de resíduos
+                    </h3>
+                    <button id="btnExportarCsv"
+                        class="inline-flex items-center px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded hover:bg-blue-700">
+                        Exportar CSV
+                    </button>
+                </div>
+                <table class="min-w-full text-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2 text-left font-semibold text-gray-700">Tipo de resíduo</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-700">Total de coletas</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-700">Total (kg)</th>
+                            <th class="px-4 py-2 text-left font-semibold text-gray-700">Primeira emissão</th>
+                            <th class="px-4 py-2 text-left font-semibold text-gray-700">Última emissão</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaResiduos">
+                        <!-- Linhas preenchidas via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Resumo por Indústria -->
+        <section class="bg-white rounded-lg shadow-md p-6 fade-in">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800">Resumo por Indústria</h2>
+                    <p class="text-gray-600 text-sm">
+                        Indústrias com maior volume de resíduos destinados corretamente.
+                    </p>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full text-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2 text-left font-semibold text-gray-700">Indústria</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-700">Coletas concluídas</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-700">Total (kg)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaIndustria">
+                        <!-- Linhas preenchidas via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p class="text-gray-400 text-sm">
+                Sistema de Coleta Seletiva Industrial - Goiás &copy; 2024
+            </p>
+            <p class="text-gray-500 text-xs mt-1">
+                Relatórios alinhados às diretrizes da ISO 14.000
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/relatorios.js"></script>
+</body>
+
+</html>
+
+
